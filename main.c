@@ -86,20 +86,18 @@ int main(int argc, const char * argv[]) {
             break;
         case 5:
             printList(list);
-            
-            freeList(list);
-            for (i = 0; i < numOfElements; i++) {
-                freeList(listOfList[i]);
-            }
             break;
     }
 
     
-    printf("\nThe time is %.4lf\n\n", (double)(end-start));
+    printf("\nThe time is %lf\n\n", (double)(end-start));
     
     
     free(arr);
-    
+    freeList(list);
+    for (i = 0; i < numOfElements; i++) {
+        freeList(listOfList[i]);
+    }
     
     return 0;
 }
